@@ -1,9 +1,12 @@
 <?php
-require __DIR__ . '/inc/functions.inc.php';
-?>
+require __DIR__ . '/inc/all.inc.php';
 
-<?php require __DIR__ . '/views/header.php' ?>
-<?php require __DIR__ . '/views/footer.php' ?>
+$overview = gen_names_overview();
+
+render('index.view', [
+    'overview' => $overview,
+]);
+
 
 
 
