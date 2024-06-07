@@ -683,3 +683,11 @@ sub {
   padding: 1.5rem;
   margin: 2rem 0;
 }
+
+
+a.active,
+a.active:visited {
+  border-color: var(--accent);
+  color: var(--accent);
+
+}

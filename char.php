@@ -14,11 +14,21 @@ if (strlen($char) === 0) {
 
 $char = strtoupper($char);
 
-$names = fetch_names_by_initials($char);
+$page = (int)($_GET['page'] ?? 1);
+$perPage = 15;
+
+$names = fetch_names_by_initials($char, $page, $perPage);
+$count = count_names_by_initials($char);
+
 
 render('char.view', [
     'char' => $char,
-    'names' => $names
+    'names' => $names,
+    'pagination' => [
+        'page' => $page,
+        'count' => $count,
+        'perPage' => $perPage,
+    ]
 
 ]);
 
